@@ -15,7 +15,7 @@ class CreateEcontactsTable extends Migration
     {
         Schema::create('econtacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigIncrements('user_id');
+            $table->bigInteger('user_id');
             $table->string('type');
             $table->string('value');
             $table->timestamps();
