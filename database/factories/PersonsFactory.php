@@ -9,6 +9,6 @@ $factory->define(Persons::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'gender' => $faker->randomElement(['male', 'female']),
-        'age' => $faker->randomDigit,
+        'age' => $faker->numberBetween(10, 99),
     ];
 });
