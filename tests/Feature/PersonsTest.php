@@ -52,7 +52,6 @@ class PersonsTest extends TestCase
      */
     public function testUpdateAnExisingPersonInDB()
     {
-        $this->withoutExceptionHandling();
         $person = factory(Persons::class)->create();
         $response = $this->patch('/api/persons/' . $person->id, $this->data());
         $person = $person->fresh();
@@ -60,6 +59,19 @@ class PersonsTest extends TestCase
         $this->assertEquals('male', $person->gender);
         $this->assertEquals('50', $person->age);
         $response->assertStatus(Response::HTTP_OK);
+    }
+
+    /**
+     * @test
+     */
+    public function testDeleteAnExistingPersonFromDB()
+    {
+        $this->withoutExceptionHandling();
+
+        $person = factory(Persons::class)->create();
+        $response = $this->delete('/api/persons/'.$person->id);
+        $this->assertCount(0, Persons::all());
+        $response->assertStatus(Response::HTTP_NO_CONTENT);
     }
 
     private function data()
