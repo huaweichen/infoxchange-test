@@ -1824,7 +1824,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PersonsList",
   mounted: function mounted() {
@@ -37378,31 +37377,15 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "card-body" },
-                  [
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v("Gender: " + _vm._s(person.gender))
-                    ]),
-                    _vm._v(" "),
-                    _c("h5", { staticClass: "card-title" }, [
-                      _vm._v("Age: " + _vm._s(person.age))
-                    ]),
-                    _vm._v(" "),
-                    _c("router-link", [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-primary",
-                          attrs: { href: "#" }
-                        },
-                        [_vm._v("View")]
-                      )
-                    ])
-                  ],
-                  1
-                )
+                _c("div", { staticClass: "card-body" }, [
+                  _c("h5", { staticClass: "card-title" }, [
+                    _vm._v("Gender: " + _vm._s(person.gender))
+                  ]),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "card-title" }, [
+                    _vm._v("Age: " + _vm._s(person.age))
+                  ])
+                ])
               ])
             })
           ],

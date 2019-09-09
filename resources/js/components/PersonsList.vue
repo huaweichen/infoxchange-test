@@ -15,7 +15,6 @@
                 <div class="card-body">
                     <h5 class="card-title">Gender: {{ person.gender }}</h5>
                     <h5 class="card-title">Age: {{ person.age }}</h5>
-                    <router-link><a href="#" class="btn btn-primary">View</a></router-link>
                 </div>
             </div>
         </div>
