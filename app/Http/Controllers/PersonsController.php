@@ -22,10 +22,20 @@ class PersonsController extends Controller
     /**
      * @return JsonResponse
      */
-    public function store()
+    public function store(): JsonResponse
     {
         $person = Persons::create($this->validateData());
         return (new PersonsResource($person))->response()->setStatusCode(Response::HTTP_CREATED);
+    }
+
+    /**
+     * @param Persons $person
+     * @return JsonResponse
+     */
+    public function update(Persons $person): JsonResponse
+    {
+        $person->update($this->validateData());
+        return (new PersonsResource($person))->response()->setStatusCode(Response::HTTP_OK);
     }
 
     /**

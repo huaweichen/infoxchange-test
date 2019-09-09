@@ -39,13 +39,27 @@ class PersonsTest extends TestCase
      */
     public function testSaveASinglePersonIntoDB()
     {
-        $this->withoutExceptionHandling();
         $response = $this->post('/api/persons', $this->data());
         $person = Persons::first();
         $this->assertEquals('Hello Dude', $person->name);
         $this->assertEquals('male', $person->gender);
         $this->assertEquals('50', $person->age);
         $response->assertStatus(Response::HTTP_CREATED);
+    }
+
+    /**
+     * @test
+     */
+    public function testUpdateAnExisingPersonInDB()
+    {
+        $this->withoutExceptionHandling();
+        $person = factory(Persons::class)->create();
+        $response = $this->patch('/api/persons/' . $person->id, $this->data());
+        $person = $person->fresh();
+        $this->assertEquals('Hello Dude', $person->name);
+        $this->assertEquals('male', $person->gender);
+        $this->assertEquals('50', $person->age);
+        $response->assertStatus(Response::HTTP_OK);
     }
 
     private function data()
