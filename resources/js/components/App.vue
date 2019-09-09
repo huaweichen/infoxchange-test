@@ -6,13 +6,17 @@
         <router-link class="btn btn-primary btn-lg" to="/persons">
             Persons List
         </router-link>
-        <router-view class="overflow-x-hidden p-6"></router-view>
+        <router-link class="btn btn-primary btn-lg" to="/persons/create">
+            Add New Person
+        </router-link>
+
+        <router-view class="overflow-x-hidden p-6" v-show="$route.path !== '/'"></router-view>
     </div>
 </template>
 
 <script>
     export default {
-        name: "App"
+        name: "App",
     }
 </script>
 
