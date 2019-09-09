@@ -8,6 +8,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
+/**
+ * Class PersonsController
+ * @package App\Http\Controllers
+ */
 class PersonsController extends Controller
 {
     /**
@@ -58,7 +62,7 @@ class PersonsController extends Controller
         return request()->validate([
             'name' => 'required|max:255',
             'gender' => 'required|in:male,female',
-            'age' => 'required',
+            'age' => 'required|integer',
         ]);
     }
 }
