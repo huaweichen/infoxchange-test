@@ -66,8 +66,6 @@ class PersonsTest extends TestCase
      */
     public function testDeleteAnExistingPersonFromDB()
     {
-        $this->withoutExceptionHandling();
-
         $person = factory(Persons::class)->create();
         $response = $this->delete('/api/persons/'.$person->id);
         $this->assertCount(0, Persons::all());
