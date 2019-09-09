@@ -39,6 +39,17 @@ class PersonsController extends Controller
     }
 
     /**
+     * @param Persons $person
+     * @return JsonResponse
+     * @throws \Exception
+     */
+    public function destroy(Persons $person): JsonResponse
+    {
+        $person->delete();
+        return response()->json([], Response::HTTP_NO_CONTENT);
+    }
+
+    /**
      * Helper function for validate data and return the data.
      * @return array
      */

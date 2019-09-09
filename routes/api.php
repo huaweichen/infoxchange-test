@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/persons', 'PersonsController@index');
 Route::post('/persons', 'PersonsController@store');
 Route::patch('/persons/{person}', 'PersonsController@update');
+Route::delete('/persons/{person}', 'PersonsController@destroy');
