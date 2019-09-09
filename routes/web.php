@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/**
+ * Redirect anything from Web to Vue.
+ */
+Route::get('/{anything}', 'VueController@index')->where('anything', '.*');
